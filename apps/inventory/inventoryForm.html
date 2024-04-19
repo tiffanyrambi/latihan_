@@ -1,0 +1,59 @@
+﻿<div ng-controller="inventoryController">
+    <div style="color: blue;" ng-show="message">{{message}}</div>
+    <div class="container">
+        <!--<table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>Code</td>
+                    <td>Name</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="inventory in inventories">
+                    <td>{{$index + 1}}</td>
+                    <td>{{inventory.inventoryCode}}</td>
+                    <td>{{inventory.inventoryName}}</td>
+                    <td>{{inventory.inventoryQty}}</td>
+                    <td>{{inventory.inventoryPrice}}</td>
+                    <td><button ng-click="edit(inventory)" class="btn btn-warning"><i class="fa fa-edit"></i></button></td>
+                    <td><button ng-click="delete($index)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+                </tr>
+            </tbody>
+        </table>-->
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <td>Inventory</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Inventory Code</td>
+            <td></td>
+            <td><input type="text" ng-model="inventory.InventoryCode" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Inventory Name</td>
+            <td></td>
+            <td><input type="text" ng-model="inventory.InventoryName" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Inventory Quantity</td>
+            <td></td>
+            <td><input type="number" ng-model="inventory.InventoryQty" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Inventory Price</td>
+            <td></td>
+            <td><input type="number" ng-model="inventory.InventoryPrice" class="form-control"></td>
+        </tr>
+        <tr>
+            <td colspam="2"></td>
+            <td><button type="button" class="btn btn-success" ng-click="submit(inventory)">Save</button></td>
+        </tr>
+    </table>
+</div>

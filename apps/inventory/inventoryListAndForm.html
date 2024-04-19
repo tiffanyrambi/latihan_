@@ -1,0 +1,101 @@
+﻿<!--<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>No</td>
+                <td>Code</td>
+                <td>Name</td>
+                <td>Quantity Init</td>
+                <td>Quantity BOSO</td>
+                <td>Quantity Outgoing</td>
+                <td>Quantity Final</td>
+                <td>Price</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="inventory in inventories">
+                <td>{{$index + 1}}</td>
+                <td>{{inventory.inventoryCode}}</td>
+                <td>{{inventory.inventoryName}}</td>
+                <td>{{inventory.inventoryQty}}</td>-->
+<!--inventoryQty initial-->
+<!--<td>{{inventory.backOrderSalesOrder}}</td>
+                <td>{{inventory.inventoryQtyOutgoing}}</td>
+                <td>{{inventory.inventoryQtyFinal}}</td>
+                <td>{{inventory.inventoryPrice}}</td>
+                <td><a ui-sref="editInventory({id: '{{inventory.inventoryId}}'})" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                <td><button ng-click="delete(inventory.inventoryId)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->
+<!-- ng-controller="inventoryListAndFormController" -->
+
+
+
+<div>
+    <div style="color: blue;" ng-show="message">{{message}}</div>
+    <div class="container">
+
+        <!-- searchbox -->
+        <input type="text" ng-change="filteredData(myValue)" ng-model="myValue" />
+        <br><br>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>Code</td>
+                    <td>Name</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="inventory in inventories">
+                    <td>{{$index + 1}}</td>
+                    <td>{{inventory.inventoryCode}}</td>
+                    <td>{{inventory.inventoryName}}</td>
+                    <td>{{inventory.inventoryQty}}</td>
+                    <td>{{inventory.inventoryPrice}}</td>
+                    <td><button ng-click="edit($index)" class="btn btn-warning"><i class="fa fa-edit"></i></button></td>
+                    <td><button ng-click="delete($index)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <td>Inventory</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Inventory Code</td>
+            <td></td>
+            <td><input type="text" ng-model="inventoryMiniForm.inventoryCode" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Inventory Name</td>
+            <td></td>
+            <td><input type="text" ng-model="inventoryMiniForm.inventoryName" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Inventory Quantity</td>
+            <td></td>
+            <td><input type="number" ng-model="inventoryMiniForm.inventoryQty" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Inventory Price</td>
+            <td></td>
+            <td><input type="number" ng-model="inventoryMiniForm.inventoryPrice" class="form-control"></td>
+        </tr>
+        <tr>
+            <td colspam="2"></td>
+            <td><button type="button" class="btn btn-success" ng-click="submit()">Save</button></td>
+        </tr>
+    </table>
+</div>

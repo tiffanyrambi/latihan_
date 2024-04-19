@@ -1,0 +1,86 @@
+﻿<div class="container">
+
+    <!-- searchbox -->
+    <input type="text" ng-change="myFunc(myValue)" ng-model="myValue" />
+
+    <br><br>
+
+    <!--<button ng-click="sortCode()">Sort Code</button>
+    <br><br>
+
+    <button ng-click="sortName()">Sort name</button>
+    <br><br>
+
+    <button ng-click="sortQty()">Sort Qty</button>
+    <br><br>
+
+    <button ng-click="sortPrice()">Sort Price</button>
+    <br><br>-->
+
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>No</td>
+                <td>Code<button ng-click="sortCode()">Sort</button></td>
+                <td>Name<button ng-click="sortName()">Sort</button></td>
+                <td>Quantity Init<button ng-click="sortQty()">Sort</button></td>
+                <td>Quantity BOSO</td>
+                <td>Quantity Outgoing</td>
+                <td>Quantity Final</td>
+                <td>Price<button ng-click="sortPrice()">Sort</button></td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr ng-repeat="inventory in inventories.slice((pageNumber-1)*itemPerPage, pageNumber*itemPerPage)">
+                <td>{{$index + 1}}</td>
+                <td>{{inventory.inventoryCode}}</td>
+                <td>{{inventory.inventoryName}}</td>
+                <td>{{inventory.inventoryQty}}</td>
+                <td>{{inventory.inventoryPrice}}</td>
+                <td><a ui-sref="editInventory({id: '{{inventory.inventoryId}}'})" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                <td><button ng-click="delete(inventory.inventoryId)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+            </tr>-->
+            <!--<tr ng-repeat="inventory in inventoriesSplitIntoPages">
+                <td>{{$index + 1}}</td>
+                <td>{{inventory.inventoryCode}}</td>
+                <td>{{inventory.inventoryName}}</td>
+                <td>{{inventory.inventoryQty}}</td>
+                <td>{{inventory.inventoryPrice}}</td>
+                <td><a ui-sref="editInventory({id: '{{inventory.inventoryId}}'})" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                <td><button ng-click="delete(inventory.inventoryId)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+            </tr>-->
+            <tr ng-repeat="inventory in inventories">
+                <td>{{$index + 1}}</td>
+                <td>{{inventory.InventoryCode}}</td>
+                <td>{{inventory.InventoryName}}</td>
+                <td>{{inventory.InventoryQty}}</td> <!--inventoryQty initial-->
+                <td>{{inventory.BackOrderSalesOrder}}</td>
+                <td>{{inventory.InventoryQtyOutgoing}}</td>
+                <td>{{inventory.InventoryQtyFinal}}</td>
+                <td>{{inventory.InventoryPrice}}</td>
+                <td><a ui-sref="editInventory({id: '{{inventory.InventoryId}}'})" class="btn btn-warning"><i class="fa fa-edit"></i></a></td>
+                <td><button ng-click="delete(inventory.InventoryId)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--
+    <div>
+    <table>
+        <tr>
+            <td>Showing x items per page.</td>
+            <td><input type="text" ng-model="itemPerPage" ng-change="getInventory()" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Page: </td>
+            <td><input type="text" ng-model="pageNumber" ng-change="getInventory()" class="form-control"></td>
+        </tr>
+    </table>
+
+</div>
+-->
